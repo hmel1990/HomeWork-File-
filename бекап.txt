@@ -1,0 +1,97 @@
+#include <iostream>
+#include<fstream>
+#include <cstdlib>
+using namespace std;
+
+
+class my_class_file
+{
+private:
+	string filenames[7] = { "who.txt", "where.txt", "when.txt", "with_whom.txt", "what_doing.txt", "what_happened.txt", "moral.txt" };
+public:
+//	static void StringReadingExample()
+//	{
+//		setlocale(0, "");
+//		srand(time(0));
+//
+//		ifstream who("who.txt");
+//		ifstream where("where.txt");
+//		ifstream when("when.txt");
+//		ifstream with_whom("with_whom.txt");
+//		ifstream what_doing("what_doing.txt");
+//		ifstream what_happened("what_happened.txt");
+//		ifstream moral("moral.txt");
+//
+//
+///*
+//char one[64], two[64], three[64], four[64], five[64], six[64], seven[64];
+//
+//
+//		
+//		who.getline(one, sizeof(one)); // читаем по одной строке
+//		where.getline(two, sizeof(two));
+//		when.getline(three, sizeof(three));
+//		with_whom.getline(four, sizeof(four));
+//		what_doing.getline(five, sizeof(five));
+//		what_happened.getline(six, sizeof(six));
+//		moral.getline(seven, sizeof(seven));
+//
+//
+//
+//		cout << one << " ";
+//		cout << two << " ";
+//		cout << three << " ";
+//		cout << four << " ";
+//		cout << five << " ";
+//		cout << six << " ";
+//		cout << seven << " ";
+//*/
+//		
+//
+//
+//	
+//
+//		//char line[64];
+//		//while (!input_file.eof()) {
+//		//	input_file.getline(line, sizeof(line));
+//		//	cout << line << "\n";
+//		//}
+//
+//		//cout << "\nStringReadingExample DONE!\n";
+//	}
+//	
+	static string read_random_line(string* filenames, int element_of_array)
+	{
+		ifstream file(filenames[element_of_array]);
+		string line;
+		int current_line = 1;
+		int t = rand() % 10 + 1;
+
+		while (getline(file, line)) {
+			if (current_line == t) {
+				return line;
+			}
+			current_line++;
+		}
+	}
+
+
+		/*while (getline(file, line))
+		{
+			if (current_line == t) 
+			{
+				return line;
+			}
+			current_line++;
+		}*/
+	}
+
+};
+
+
+int main()
+{
+	my_class_file play;
+	play.StringReadingExample();
+	
+}
